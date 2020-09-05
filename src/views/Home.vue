@@ -11,9 +11,11 @@
 </template>
 
 <script lang="ts">
+import { inject, Ref } from 'vue';
 import TopNav from '../components/TopNav.vue'
 export default {
-    components: { TopNav }
+    components: { TopNav },
+    
 }
 </script>
 <style lang="scss" scoped>
