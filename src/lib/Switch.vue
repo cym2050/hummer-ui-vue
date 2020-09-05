@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked:value}"> <span></span> </button>
+  <button class="hummer-switch" @click="toggle" :class="{'hummer-checked':value}"> <span></span> </button>
 </template>
 
 <script lang="ts">
@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.hummer-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -38,7 +38,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.hummer-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -50,7 +50,7 @@ button {
   &:active {
     > span {width: $h2 + 4px;}
   }
-  &.checked:active {
+  &.hummer-checked:active {
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
 }

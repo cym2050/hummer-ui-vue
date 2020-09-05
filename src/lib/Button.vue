@@ -1,5 +1,5 @@
 <template>
-  <button class="hummer-button" :class="`theme-${theme}`">
+  <button class="hummer-button" :class="`hummer-theme-${theme}`">
     <slot/>
   </button>
 </template>
