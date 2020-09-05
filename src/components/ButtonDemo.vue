@@ -1,3 +1,17 @@
 <template>
-    <h2>Button</h2>
+    <div>Button示例</div>
+    <h1>示例1</h1>
+    <Button
+    @click="onClick" 
+    @focus="onClick" 
+    @mouseover="onClick"
+    >你好
+    </Button>
 </template>
+
+<script lang="ts">
+import Button from '../lib/Button.vue'
+export default {
+    components: { Button }
+}
+</script>
