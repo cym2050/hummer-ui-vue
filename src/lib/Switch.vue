@@ -12,7 +12,7 @@ export default {
   setup(props, context) {
     const checked = ref(false)
     const toggle = () => {
-      context.emit('input', !props.value)
+      context.emit('update:value', !props.value)
     }
     return { checked, toggle }
   }
