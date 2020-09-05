@@ -1,16 +1,14 @@
 <template>
-<div>hello</div>
-<Yunmei />
+    <div>导航栏 |
+        <router-link to='/'>造轮子1</router-link> |
+        <router-link to='/xxx'>造轮子2</router-link>
+    </div>
+    <router-view/>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Yunmei from './components/Yunmei.vue'
 
 export default {
     name: 'App',
-    components: {
-        Yunmei
-    }
 }
 </script>

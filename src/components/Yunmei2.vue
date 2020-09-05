@@ -1,5 +1,5 @@
 <template>
 <div>
-    造轮子启航1
+    造轮子启航2
 </div>
 </template>
