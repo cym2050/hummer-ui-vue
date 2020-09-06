@@ -3,10 +3,9 @@
     <div @click="onClickOverlay" class="hummer-dialog-overlay"></div>
     <div class="hummer-dialog-wrapper">
       <div class="hummer-dialog">
-        <header>标题 <span @click="close" class="hummer-dialog-close"></span></header>
+        <header>{{ title }}<span @click="close" class="hummer-dialog-close"></span></header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot />
         </main>
         <footer>
           <Button @click="ok" level="main">OK</Button>
@@ -28,6 +27,10 @@ export default {
     closeOnClickOverlay: {
       type: Boolean,
       default: true
+    },
+    title: {
+      type: String,
+      default: '提示'
     },
     ok: {
       type: Function
