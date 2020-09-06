@@ -7,10 +7,15 @@
       v-model:visible="x" 
       :closeOnClickOverlay="false"
       :ok="f1" :cancel="f2"
-      >
+    >
+      <template v-slot:title>
+        <strong>world</strong>
+      </template>
+      <template v-slot:content>
         <div>nihao</div>
         <div>world</div>
-      </Dialog>
+      </template>
+    </Dialog>
 </template>
 
 <script lang="ts">
