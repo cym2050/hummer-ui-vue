@@ -1,5 +1,6 @@
 <template>
-<div class="topBarAndBanner" >
+<div>
+  <div class="topBarAndBanner" >
     <TopNav/>
     <div class="banner">
       <h1>蜂鸟 UI</h1>
@@ -9,7 +10,20 @@
         <router-link to='/doc'>开始</router-link>
       </p>
     </div>
+  </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-Vue"></use>
+    </svg>
+    <svg class="icon">
+        <use xlink:href="#icon-typescript"></use>
+    </svg>
+    <svg class="icon">
+        <use xlink:href="#icon-lighting"></use>
+    </svg>
+  </div>
 </div>
+
 </template>
 
 <script lang="ts">
@@ -24,8 +38,16 @@ export default {
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #28d1c9;
+
 .topBarAndBanner {
   background: linear-gradient(145deg, rgba(227,255,253,1) 0%, rgba(182,233,230,1) 100%);
+}
+
+.features {
+  > svg {
+    width: 64px;
+    height: 64px;;
+  }
 }
 
 .banner {
@@ -50,4 +72,6 @@ $color: #28d1c9;
     }
   }
 }
+
+
 </style>
