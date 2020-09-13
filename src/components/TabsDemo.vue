@@ -1,5 +1,5 @@
 <template>
-  <div>Tabs 示例</div>
+  <h2>Tabs 示例</h2>
   <h1>示例1</h1>
   <Tabs>
     <Tab title="导航1">内容1</Tab>

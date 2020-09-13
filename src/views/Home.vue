@@ -1,13 +1,15 @@
 <template>
+<div class="topBarAndBanner" >
     <TopNav/>
     <div class="banner">
-      <h1>轱辘UI</h1>
-      <h2>一个厉害的 UI 框架</h2>
+      <h1>蜂鸟 UI</h1>
+      <h2>一个成长中的 UI 框架</h2>
       <p class="actions">
         <a>GitHub</a>
         <router-link to='/doc'>开始</router-link>
       </p>
     </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -15,17 +17,20 @@ import { inject, Ref } from 'vue';
 import TopNav from '../components/TopNav.vue'
 export default {
     components: { TopNav },
-    
 }
 </script>
+
 <style lang="scss" scoped>
+.topBarAndBanner {
+  background: linear-gradient(145deg, rgba(227,255,253,1) 0%, rgba(182,233,230,1) 100%);
+}
+
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
   > .actions{
     padding: 8px 0;
     a {
