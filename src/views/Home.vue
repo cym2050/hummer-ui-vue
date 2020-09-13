@@ -69,7 +69,6 @@ $color: #28d1c9;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   svg {
     width: 64px;
     height: 64px;

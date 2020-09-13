@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <TopNav class="nav" />
+    <TopNav class="nav" :menuVisible="true"/>
     <div class="content">
       <aside v-if="asideVisible">
           <h2>组件列表</h2>
