@@ -11,16 +11,36 @@
       </p>
     </div>
   </div>
-  <div class="features">
-    <svg class="icon">
-      <use xlink:href="#icon-Vue"></use>
-    </svg>
-    <svg class="icon">
-        <use xlink:href="#icon-typescript"></use>
-    </svg>
-    <svg class="icon">
-        <use xlink:href="#icon-lighting"></use>
-    </svg>
+  <div class="features-container">
+    <ul class="features">
+      <li>
+        <svg class="icon">
+          <use xlink:href="#icon-Vue"></use>
+        </svg>
+        <div>
+          <h3>基于 Vue 3</h3>
+          <p>使用 Vue 3 Composition API 构建</p>
+        </div>
+      </li>
+      <li>
+        <svg class="icon">
+            <use xlink:href="#icon-typescript"></use>
+        </svg>
+        <div>
+          <h3>基于 Typescript</h3>
+          <p>源码用 Typescript 书写</p>
+        </div>
+      </li>
+      <li>
+        <svg class="icon">
+            <use xlink:href="#icon-lighting"></use>
+        </svg>
+        <div>
+          <h3>代码易读</h3>
+          <p>每个组件的源代码都十分简洁</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -45,9 +65,18 @@ $color: #28d1c9;
 }
 
 .features {
-  > svg {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  svg {
     width: 64px;
-    height: 64px;;
+    height: 64px;
+  }
+  > li {
+    display: flex;
+    align-items: center;
   }
 }
 
