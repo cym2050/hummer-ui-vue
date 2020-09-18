@@ -1,19 +1,19 @@
 <template>
-    <div class="topnav">
-      <div class="logo" @click="toggleAside">
-        <svg class="icon">
-            <use xlink:href="#icon-huangguan1"></use>
-        </svg>
-      </div>
-      <ul class="menu">
-        <li>
-          <router-link to='/doc'>文档</router-link>
-        </li>
-      </ul>
-      <svg v-if="menuVisible" class="toggleAside" @click="toggleAside">
-        <use xlink:href="#icon-menu"></use>
+  <div class="topnav">
+    <div class="logo" @click="toggleAside">
+      <svg class="icon">
+          <use xlink:href="#icon-huangguan1"></use>
       </svg>
     </div>
+    <ul class="menu">
+      <li>
+        <router-link to='/doc'>文档</router-link>
+      </li>
+    </ul>
+    <svg v-if="menuVisible" class="toggleAside" @click="toggleAside">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,7 +30,7 @@ export default {
       const toggleAside = () => {
         asideVisible.value = !asideVisible.value
       }
-      return { toggleAside }
+      return { toggleAside } // 返回 template 里才能用
   }
 }
 </script>
