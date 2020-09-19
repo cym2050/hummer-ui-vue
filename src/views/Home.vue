@@ -11,39 +11,32 @@
       </p>
     </div>
   </div>
-  <div class="features-container">
-    <ul class="features">
+  <div class="features">
+    <ul>
       <li>
-        <svg class="icon">
+        <svg>
           <use xlink:href="#icon-Vue"></use>
         </svg>
-        <div>
-          <h3>基于 Vue 3</h3>
-          <p>使用 Vue 3 Composition API 构建</p>
-        </div>
+        <h3>基于 Vue 3</h3>
+        <p>骄傲地使用了 Vue 3 Composition API</p>
       </li>
       <li>
-        <svg class="icon">
-            <use xlink:href="#icon-typescript"></use>
+        <svg>
+          <use xlink:href="#icon-typescript"></use>
         </svg>
-        <div>
-          <h3>基于 Typescript</h3>
-          <p>源码用 Typescript 书写</p>
-        </div>
+        <h3>基于 TypeScript </h3>
+        <p>源代码采用 TypeScript 书写（非严格检查）</p>
       </li>
       <li>
-        <svg class="icon">
-            <use xlink:href="#icon-lighting"></use>
+        <svg>
+          <use xlink:href="#icon-lighting"></use>
         </svg>
-        <div>
-          <h3>代码易读</h3>
-          <p>每个组件的源代码都十分简洁</p>
-        </div>
+        <h3>代码易读</h3>
+        <p>每个组件的源代码都极其简洁</p>
       </li>
     </ul>
   </div>
 </div>
-
 </template>
 
 <script lang="ts">
@@ -65,17 +58,48 @@ $color: #28d1c9;
 }
 
 .features {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  svg {
-    width: 64px;
-    height: 64px;
+  margin: 64px auto;
+  width: 400px;
+
+  @media (min-width: 800px) {
+    width: 800px;
   }
-  > li {
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  >ul {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+
+    >li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      >svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      >h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      >p {
+        grid-area: text
+      }
+    }
   }
 }
 
@@ -101,6 +125,4 @@ $color: #28d1c9;
     }
   }
 }
-
-
 </style>
