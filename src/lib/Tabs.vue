@@ -11,18 +11,13 @@ import Tab from './Tab.vue'
 export default {
   setup(props, context) {
     const defaults = context.slots.default()
-    console.log(defaults[0])
+    defaults.forEach((tag) => {
+      if (tag.type !== Tab) {
+        throw new Error('Tabs 子标签必须是 Tab')
+      }
+    })
 
     return { defaults }
-  },
-  // beforeCreate() {
-  //   console.log('beforeCreate');
-  // },
-  // created() {
-  //   console.log('created');
-  // },
-  // mounted() {
-  //   console.log('mounted');
-  // }
+  }
 }
 </script>
