@@ -3,21 +3,33 @@
     <TopNav class="nav" :menuVisible="true"/>
     <div class="content">
       <aside v-if="asideVisible">
-          <h2>组件列表</h2>
-          <ol> 
-              <li>
-                  <router-link to='/doc/switch'>switch 组件</router-link>
-              </li>
-              <li>
-                  <router-link to='/doc/button'>Button 组件</router-link>
-              </li>
-              <li>
-                  <router-link to='/doc/dialog'>Dialog 组件</router-link>
-              </li>
-              <li>
-                  <router-link to='/doc/tab'>Tab 组件</router-link>
-              </li>
-          </ol>
+        <h2>文档</h2>
+        <ol> 
+          <li>
+              <router-link to='/doc/intro'>intro</router-link>
+          </li>
+          <li>
+              <router-link to='/doc/get-started'>get-started</router-link>
+          </li>
+          <li>
+              <router-link to='/doc/install'>install</router-link>
+          </li>
+        </ol>
+        <h2>组件列表</h2>
+        <ol> 
+          <li>
+              <router-link to='/doc/switch'>switch 组件</router-link>
+          </li>
+          <li>
+              <router-link to='/doc/button'>Button 组件</router-link>
+          </li>
+          <li>
+              <router-link to='/doc/dialog'>Dialog 组件</router-link>
+          </li>
+          <li>
+              <router-link to='/doc/tab'>Tab 组件</router-link>
+          </li>
+        </ol>
       </aside>
       <main>
         <router-view/>
