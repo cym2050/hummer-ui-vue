@@ -6,17 +6,20 @@
       :class="{ selected: t === selected }" 
       v-for="(t, index) in titles" 
       :key='index'
+      @click="select(t)"
      > 
       {{t}} 
      </div>
   </div>
   <div class="hummer-tabs-content">
-    <component class="hummer-tabs-content-item" v-for="(c, index) in defaults" :key="index" :is="c"/>
+    <component class="hummer-tabs-content-item" :is="current"/>
+    {{current}}
   </div>
 </div>
 </template>
 
 <script lang="ts">
+import { computed } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -31,19 +34,18 @@ export default {
         throw new Error('Tabs 子标签必须是 Tab')
       }
     })
-    // console.log('props', props);
-    // console.log('context', context);
-    
-    // defaults.forEach((tag) => {
-    //   console.log(tag);
-    // })
-    // defaults.forEach((tag) => {
-    //   console.log({...tag});
-    // })
+    const current = computed(() => {
+      console.log('重新计算')
+      return defaults.filter((tag) => {
+                return tag.props.title === props.selected
+              })[0]
+    })
     const titles = defaults.map((tag) => tag.props.title)
+    const select = (title: string) => {
+      context.emit('update:selected', title)
+    }
 
-
-    return { defaults, titles }
+    return { defaults, titles, select, current }
   }
 }
 </script>
