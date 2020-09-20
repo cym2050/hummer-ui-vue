@@ -12,7 +12,7 @@
      </div>
   </div>
   <div class="hummer-tabs-content">
-    <component class="hummer-tabs-content-item" :is="current"/>
+    <component class="hummer-tabs-content-item" :is="current" :key="selected"/>
     {{current}}
   </div>
 </div>
