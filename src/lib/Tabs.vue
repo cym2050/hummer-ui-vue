@@ -1,6 +1,12 @@
 <template>
-  <div v-for="(t, index) in titles" :key='index'> {{t}} </div>
-  <component v-for="c in defaults" :is="c"/>  
+<div class="hummer-tabs">
+  <div class="hummer-tabs-nav">
+    <div class="hummer-tabs-nav-item" v-for="(t, index) in titles" :key='index'> {{t}} </div>
+  </div>
+  <div class="hummer-tabs-content">
+    <component class="hummer-tabs-content-item" v-for="c in defaults" :is="c"/>  
+  </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -29,3 +35,30 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+
+.hummer-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+}
