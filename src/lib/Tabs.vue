@@ -5,12 +5,13 @@
       class="hummer-tabs-nav-item" 
       :class="{ selected: t === selected }" 
       v-for="(t, index) in titles" 
+      :ref="el => { if (el) navItems[index] = el }"
       :key='index'
       @click="select(t)"
      > 
       {{t}} 
     </div>
-    <div class="hummer-tabs-nav-indicator"></div>
+    <div class="hummer-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="hummer-tabs-content">
     <component class="hummer-tabs-content-item" :is="current" :key="selected"/>
@@ -19,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -28,6 +29,15 @@ export default {
     }
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([])
+    const indicator = ref<HTMLDivElement>(null)
+    onMounted(() => {
+      const divs = navItems.value
+      const result = divs.filter(div => div.classList.contains('selected'))[0]
+      const { width } = result.getBoundingClientRect()
+      indicator.value.style.width = width + 'px'
+    })
+
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -44,7 +54,7 @@ export default {
       context.emit('update:selected', title)
     }
 
-    return { defaults, titles, select, current }
+    return { defaults, titles, select, current, navItems, indicator }
   }
 }
 </script>
