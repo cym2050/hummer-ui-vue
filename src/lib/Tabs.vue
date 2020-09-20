@@ -1,7 +1,14 @@
 <template>
 <div class="hummer-tabs">
   <div class="hummer-tabs-nav">
-    <div class="hummer-tabs-nav-item" v-for="(t, index) in titles" :key='index'> {{t}} </div>
+    <div 
+      class="hummer-tabs-nav-item" 
+      :class="{ selected: t === selected }" 
+      v-for="(t, index) in titles" 
+      :key='index'
+     > 
+      {{t}} 
+     </div>
   </div>
   <div class="hummer-tabs-content">
     <component class="hummer-tabs-content-item" v-for="(c, index) in defaults" :key="index" :is="c"/>
@@ -12,6 +19,11 @@
 <script lang="ts">
 import Tab from './Tab.vue'
 export default {
+  props: {
+    selected: {
+      type: String
+    }
+  },
   setup(props, context) {
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
@@ -62,3 +74,5 @@ $border-color: #d9d9d9;
     }
   }
 }
+
+</style>
