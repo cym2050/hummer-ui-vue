@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -65,7 +65,7 @@ export default {
       context.emit('update:selected', title)
     }
 
-    return { defaults, titles, select, current, indicator, container, selectedItem }
+    return { defaults, titles, select, indicator, container, selectedItem }
   }
 }
 </script>
