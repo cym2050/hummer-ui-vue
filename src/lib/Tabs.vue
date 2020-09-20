@@ -9,11 +9,11 @@
       @click="select(t)"
      > 
       {{t}} 
-     </div>
+    </div>
+    <div class="hummer-tabs-nav-indicator"></div>
   </div>
   <div class="hummer-tabs-content">
     <component class="hummer-tabs-content-item" :is="current" :key="selected"/>
-    {{current}}
   </div>
 </div>
 </template>
@@ -35,7 +35,6 @@ export default {
       }
     })
     const current = computed(() => {
-      console.log('重新计算')
       return defaults.filter((tag) => {
                 return tag.props.title === props.selected
               })[0]
@@ -60,7 +59,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
-
+    position: relative;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -73,6 +72,15 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
+    }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
     }
   }
 }
