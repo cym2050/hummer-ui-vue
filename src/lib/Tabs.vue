@@ -4,7 +4,7 @@
     <div class="hummer-tabs-nav-item" v-for="(t, index) in titles" :key='index'> {{t}} </div>
   </div>
   <div class="hummer-tabs-content">
-    <component class="hummer-tabs-content-item" v-for="c in defaults" :is="c"/>  
+    <component class="hummer-tabs-content-item" v-for="(c, index) in defaults" :key="index" :is="c"/>
   </div>
 </div>
 </template>
