@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$aside-index: 10;
+$aside-index: 1;
 .layout {
   display: flex;
   flex-direction: column;
