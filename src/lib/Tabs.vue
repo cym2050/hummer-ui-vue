@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect, onMounted, onUpdated } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -46,9 +46,9 @@ export default {
       const left = left2 - left1
       indicator.value.style.left = left + 'px'
     }
-    // onMounted(x)
-    // onUpdated(x)
-    watchEffect(x)  // 实现了上面两个的功能
+    onMounted(x)
+    onUpdated(x)
+    // watchEffect(x)  // 实现了上面两个的功能
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
