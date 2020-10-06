@@ -16,11 +16,14 @@
         <div>world</div>
       </template>
     </Dialog>
+
+    <Button @click="openDialog">open</Button> 
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
+import { openDialog } from '../lib/openDialog'
 import { ref } from 'vue'
 export default {
   components: { Dialog, Button },
@@ -34,6 +37,12 @@ export default {
     }
     const f2 = () => {
 
+    }
+    const showDialog = () => {
+      openDialog({
+        title: '标题',
+        content: '你好'
+      })
     }
     return { x, toggle, f1, f2 }
   }
