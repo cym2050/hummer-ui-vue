@@ -17,7 +17,7 @@
       </template>
     </Dialog>
 
-    <Button @click="openDialog">open</Button> 
+    <Button @click="showDialog">open</Button> 
 </template>
 
 <script lang="ts">
@@ -41,10 +41,17 @@ export default {
     const showDialog = () => {
       openDialog({
         title: '标题',
-        content: '你好'
+        content: '你好',
+        ok() {
+          console.log('ok')
+        },
+        cancel() {
+          console.log('cancel');
+          
+        }
       })
     }
-    return { x, toggle, f1, f2 }
+    return { x, toggle, f1, f2, showDialog }
   }
 }
 </script>
