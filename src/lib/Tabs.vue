@@ -65,7 +65,7 @@ export default {
       context.emit('update:selected', title)
     }
 
-    return { defaults, titles, select, indicator, container, selectedItem }
+    return { defaults, titles, select, indicator, container, selectedItem, current }
   }
 }
 </script>
