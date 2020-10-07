@@ -1,12 +1,15 @@
 {
   "name": "hummer-ui-vue",
   "homepage": "./",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "files": ["dist/lib/*"],
   "main": "dist/lib/hummer-ui-vue.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@^1.26.11"
   },
   "dependencies": {
     "github-markdown-css": "^4.0.0",
