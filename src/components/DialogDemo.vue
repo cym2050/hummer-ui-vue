@@ -1,57 +1,22 @@
 <template>
-    <h2>Dialog 示例</h2>
-    <h1>示例1</h1>
-    <Button @click="toggle">toggle</Button>  
-    <!-- <Dialog :visible="x" @update:visible=" x = $event"></Dialog> -->
-    <Dialog 
-      v-model:visible="x" 
-      :closeOnClickOverlay="false"
-      :ok="f1" :cancel="f2"
-    >
-      <template v-slot:title>
-        <strong>world</strong>
-      </template>
-      <template v-slot:content>
-        <div>nihao</div>
-        <div>world</div>
-      </template>
-    </Dialog>
-
-    <Button @click="showDialog">open</Button> 
+<h1>Dialog 示例</h1>
+<Demo :component="Dialog1Demo" />
+<Demo :component="Dialog2Demo" />
 </template>
 
 <script lang="ts">
-import Dialog from '../lib/Dialog.vue'
-import Button from '../lib/Button.vue'
-import { openDialog } from '../lib/openDialog'
-import { ref } from 'vue'
+import Demo from './Demo.vue';
+import Dialog1Demo from './Dialog1.demo.vue';
+import Dialog2Demo from './Dialog2.demo.vue';
 export default {
-  components: { Dialog, Button },
+  components: {
+    Demo
+  },
   setup() {
-    const x = ref(false)
-    const toggle = () => {
-      x.value = !x.value
+    return {
+      Dialog1Demo,
+      Dialog2Demo
     }
-    const f1 = () => {
-      return false
-    }
-    const f2 = () => {
-
-    }
-    const showDialog = () => {
-      openDialog({
-        title: '标题',
-        content: '你好',
-        ok() {
-          console.log('ok')
-        },
-        cancel() {
-          console.log('cancel');
-          
-        }
-      })
-    }
-    return { x, toggle, f1, f2, showDialog }
   }
 }
 </script>
