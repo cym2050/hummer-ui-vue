@@ -1,7 +1,7 @@
 {
   "name": "hummer-ui-vue",
   "homepage": "./",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": ["dist/lib/*"],
   "main": "dist/lib/hummer-ui-vue.js",
   "scripts": {
