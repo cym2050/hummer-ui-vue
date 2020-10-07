@@ -1,62 +1,29 @@
 <template>
-  <h2>Button 示例</h2>
-  <h1>示例1</h1>
-  <div>
-      <Button >你好</Button>
-      <Button theme="button">你好</Button>
-      <Button theme="link">你好</Button>
-      <Button theme="text">你好</Button>
-  </div>
-  <h1>示例2</h1>
-  <div>
-    <Button size="big">你好</Button>
-    <Button >你好</Button>
-    <Button size="small">你好</Button>
-  </div>
-  <div>
-    <Button theme="link" size="big">大大大</Button>
-    <Button theme="link">普普通</Button>
-    <Button size="small" theme="link">小小小</Button>
-  </div>
-  <div>
-    <Button size="big" theme="text">大大大</Button>
-    <Button theme="text">普普通</Button>
-    <Button size="small" theme="text">小小小</Button>
-  </div>
-  <h1>示例3</h1>
-  <div>
-    <dir>
-      <Button level="main">主要按钮</Button>
-      <Button>普通按钮</Button>
-      <Button level="danger">危险按钮</Button>
-    </dir>
-    <dir>
-      <Button theme="link" level="main">主要链接按钮</Button>
-      <Button theme="link">普通链接按钮</Button>
-      <Button theme="link" level="danger">危险链接按钮</Button>
-    </dir>
-    <dir>
-      <Button theme="text" level="main">主要文字按钮</Button>
-      <Button theme="text">普通文字按钮</Button>
-      <Button theme="text" level="danger">危险文字按钮</Button>
-    </dir>
-  </div>
-  <h1>示例4</h1>
-  <div>
-    <Button disabled>禁用按钮</Button>
-    <Button theme="link" disabled>禁用链接按钮</Button>
-    <Button theme="text" disabled>禁用按钮</Button>
-  </div>
-  <h1>示例4</h1>
-  <div>
-    <Button loading>加载中</Button>
-    <Button >加载完成</Button>
-  </div>
+  <h1>Button 组件示例</h1>
+  <Demo :component='Button1demo' />
+  <Demo :component='Button2demo' />
+  <Demo :component='Button3demo' />
+  <Demo :component='Button4demo' />
+  <Demo :component='Button5demo' />
 </template>
 
 <script lang="ts">
-import Button from '../lib/Button.vue'
+import Demo from './Demo.vue'
+import Button1demo from './Button1.demo.vue'
+import Button2demo from './Button2.demo.vue'
+import Button3demo from './Button3.demo.vue'
+import Button4demo from './Button4.demo.vue'
+import Button5demo from './Button5.demo.vue'
 export default {
-    components: { Button }
+    components: { Demo },
+    setup() {
+      return {
+        Button1demo,
+        Button2demo,
+        Button3demo,
+        Button4demo,
+        Button5demo
+      }
+    }
 }
 </script>
